@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5MdeWcJPhEQ=",
+  "dgSpecHash": "RKuor/ZS95A=",
   "success": true,
-  "projectFilePath": "C:\\Users\\y9Kap\\RiderProjects\\Gadanie\\Gadanie\\Gadanie.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\1092023\\RiderProjects\\Gadanie\\Gadanie\\Gadanie.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\1092023\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\1092023\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\1092023\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\1092023\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }

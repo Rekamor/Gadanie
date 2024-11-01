@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gadanie")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc51ed7a6e5dfe268e150728f805e2350326bd42")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gadanie")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gadanie")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,24 +5,40 @@ public class Program
     
     public static void Main()
     {
-        const string filePath = @"C:\Users\y9Kap\RiderProjects\Gadanie\Gadanie\adjectives_by_letter.json";
+        const string filePath = @"C:\Users\1092023\RiderProjects\Gadanie\Gadanie\adjectives_by_letter.json";
         var jsonString = File.ReadAllText(filePath);
         var wordsDictionary = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(jsonString);
+        
         Random random = new Random();
+        string name, sex, answer;
+        
+        Gadanie:
+        Console.WriteLine("Введите имя или фамилию");
+        name = Console.ReadLine().ToUpper();
+        
+        Console.WriteLine("Введите пол (М/Ж)");
+        sex = Console.ReadLine();
 
-        Console.WriteLine("Введите ваше имя: ");
-        string name = Console.ReadLine().ToUpper();
-
-        Console.WriteLine("Расшифровка вашего имени: \n");
+        Console.WriteLine("\nРасшифровка вашего имени:\n");
 
         for (int i = 0; i < name.Length; i++)
         {
             try
             {
-                Console.WriteLine(
-                    name[i] + " - " + wordsDictionary[Convert.ToString(name[i])][random
-                                .Next(wordsDictionary[Convert.ToString(name[i])].Count)]
-                );
+                if (sex == "Ж" || sex == "ж" || sex == "F" || sex == "f")
+                {
+                    Console.WriteLine(
+                        name[i] + " - " + Female(wordsDictionary[Convert.ToString(name[i])][random
+                            .Next(wordsDictionary[Convert.ToString(name[i])].Count)])
+                    );
+                }
+                else
+                {
+                    Console.WriteLine(
+                        name[i] + " - " + wordsDictionary[Convert.ToString(name[i])][random
+                            .Next(wordsDictionary[Convert.ToString(name[i])].Count)]
+                    );
+                }
             }
             catch
             {
@@ -36,5 +52,17 @@ public class Program
                 }
             }
         }
+        Console.WriteLine("\nХотите продолжить?");
+        answer = Console.ReadLine();
+        if (answer.ToUpper() == "ДА" || answer.ToUpper() == "YES" || answer.ToUpper() == "Д" || answer.ToUpper() == "Y")
+        {
+            Console.WriteLine();
+            goto Gadanie;
+        }
+    }
+
+    static string Female(string word)
+    {
+        return word + "\b\bая";
     }
 }
