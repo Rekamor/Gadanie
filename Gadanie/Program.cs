@@ -2,7 +2,11 @@
 
 public class Program
 {
-    
+    public static long NormiceMod(long value, long divider)
+    {
+        if (value >= 0) return value % divider;
+        else return value % divider + divider;
+    }
     public static void Main()
     {
         const string filePath = @"C:\Users\1092023\RiderProjects\Gadanie\Gadanie\adjectives_by_letter.json";
@@ -23,33 +27,22 @@ public class Program
 
         for (int i = 0; i < name.Length; i++)
         {
-            try
+            string ch = name[i].ToString();
+            if (wordsDictionary.ContainsKey(ch))
             {
+                long indx = NormiceMod((long)name.GetHashCode() * (i + 1), wordsDictionary[ch].Count);
                 if (sex == "Ж" || sex == "ж" || sex == "F" || sex == "f")
                 {
-                    Console.WriteLine(
-                        name[i] + " - " + Female(wordsDictionary[Convert.ToString(name[i])][random
-                            .Next(wordsDictionary[Convert.ToString(name[i])].Count)])
-                    );
+                    Console.WriteLine(ch + " - " + Female(wordsDictionary[ch][(int)indx]));
                 }
                 else
                 {
-                    Console.WriteLine(
-                        name[i] + " - " + wordsDictionary[Convert.ToString(name[i])][random
-                            .Next(wordsDictionary[Convert.ToString(name[i])].Count)]
-                    );
+                    Console.WriteLine(ch + " - " + wordsDictionary[ch][(int)indx]);
                 }
             }
-            catch
+            else
             {
-                if (name[i] == ' ')
-                {
-                    Console.WriteLine(" ");
-                }
-                else
-                {
-                    Console.WriteLine(name[i] + " - ?");
-                }
+                Console.WriteLine(ch == " " ?  "" : ch + " - ?");
             }
         }
         Console.WriteLine("\nХотите продолжить?");
